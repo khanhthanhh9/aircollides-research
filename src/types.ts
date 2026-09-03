@@ -23,7 +23,7 @@ export type Block = {
   credit?: string;
   language?: string;
   tone?: "note" | "tip" | "warning";
-  status?: "red" | "green" | "yellow" | "pink";
+  status?: "red" | "green" | "yellow" | "pink" | "blue";
   keyTerms?: string[];
   items?: string[];
   imageWidth?: number;

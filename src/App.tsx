@@ -532,6 +532,7 @@ function BlockView({ block }: { block: Block }) {
           <span className="green"><i /> Green — Okay, very good</span>
           <span className="yellow"><i /> Yellow — In progress; questions remain</span>
           <span className="pink"><i /> Pink — Very important</span>
+          <span className="blue"><i /> Blue — Already read; low priority</span>
         </div>
       </section>
     );
@@ -2440,6 +2441,7 @@ function BlockEditor({
                 <option value="green">Green — Okay, very good</option>
                 <option value="yellow">Yellow — In progress</option>
                 <option value="pink">Pink — Very important</option>
+                <option value="blue">Blue — Already read; low priority</option>
               </select>
             </EditorField>
           )}

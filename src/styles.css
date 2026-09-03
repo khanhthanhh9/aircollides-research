@@ -2267,6 +2267,8 @@ body {
   .week-list a.reading-yellow .week-number { color: #f4c95d; }
   .week-list a.reading-pink .week-title,
   .week-list a.reading-pink .week-number { color: #ff91bc; }
+  .week-list a.reading-blue .week-title,
+  .week-list a.reading-blue .week-number { color: #79b8ff; }
   .week-list a.active-week .week-title {
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -2899,11 +2901,13 @@ body {
 .status-current.green { background: #214b3a; color: #d4f8e4; }
 .status-current.yellow { background: #65511d; color: #ffefb3; }
 .status-current.pink { background: #612d4c; color: #ffd9ee; }
+.status-current.blue { background: #1f4266; color: #d9ecff; }
 .status-current .status-dot { width: 9px; height: 9px; }
 .status-current.red .status-dot, .status-key .red i { background: #ef6f79; }
 .status-current.green .status-dot, .status-key .green i { background: #5ad39b; }
 .status-current.yellow .status-dot, .status-key .yellow i { background: #f4cb58; }
 .status-current.pink .status-dot, .status-key .pink i { background: #f08abb; }
+.status-current.blue .status-dot, .status-key .blue i { background: #79b8ff; }
 .status-key { display: flex; flex-wrap: wrap; gap: 8px 15px; margin-top: 13px; color: #c8d2d5; font-size: 12px; }
 .status-key span { display: inline-flex; align-items: center; gap: 6px; }
 .status-key i { width: 8px; height: 8px; border-radius: 50%; }
