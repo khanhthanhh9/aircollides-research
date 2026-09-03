@@ -109,10 +109,11 @@ export const weeks: Week[] = [
     status: "published",
     updatedAt: "2026-09-03T00:00:00.000Z",
     blocks: [
-      { id: "paper-1-overview", type: "callout", tone: "note", heading: "Paper overview", body: "Abbreviation: To be added\n\nSummary: To be added" },
+      { id: "paper-1-overview", type: "callout", tone: "note", heading: "Paper overview", body: "Abbreviation: To be added\n\nSummary: A smart-metro security demonstration with one humanoid robot. The robot uses a YOLO-based vision pipeline to relate a passenger to a bag or other carried item, then helps decide whether a recheck is needed. The idea is intentionally practical rather than complicated: connect existing checkpoint signals to one robot that can guide a passenger when something looks unusual." },
       { id: "paper-1-file", type: "resource", heading: "Open paper", title: "Open PDF", body: "View the full research paper.", url: "/papers/breaking-information-silos-smart-metro-security.pdf" },
-      { id: "paper-1-status", type: "status", status: "red", body: "Not read yet" },
-      { id: "paper-1-notes", type: "text", heading: "Notes", body: "Add reading notes, questions and useful connections here." },
+      { id: "paper-1-status", type: "status", status: "yellow", body: "In progress — questions remain" },
+      { id: "paper-1-notes", type: "text", heading: "My summary", body: "The paper’s real contribution is the system integration around the robot. It connects X-ray cues, the robot camera, a combined safety score and a task scheduler so that the single humanoid can speak, gesture, show warnings or direct a passenger to recheck. Its vision method begins with YOLOv8-Pose and DeepSORT, then adds keypoint-guided attention and a carrying-state classifier to distinguish bags that are genuinely being carried from implausible or poorly associated detections. In that sense, the humanoid is mainly the physical interface for a smart checkpoint rather than an autonomous security decision-maker." },
+      { id: "paper-1-accuracy", type: "text", heading: "Accuracy and limits", body: "The paper does not report one simple overall accuracy. On its 3,600-image test set across six object-state labels, the proposed visual method reports 46.9% average precision (AP), 69.4% AP50, 49.7% AP75 and 60.1% average recall. The authors report a 10.5 percentage-point AP improvement over YOLOv8-s. For the combined X-ray and vision safety score, they report an AUC of 0.92, compared with 0.76 for vision-only, and at their selected recheck threshold a 96.5% true-positive rate with a 4.2% false-positive rate. These results are promising for the tested setup, but the dataset and trained models are not public, so independent reproduction is not currently possible." },
     ],
   },
   {

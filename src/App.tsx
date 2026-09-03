@@ -527,7 +527,9 @@ function BlockView({ block }: { block: Block }) {
         <div className="callout-icon">{block.tone === "tip" ? "✦" : "i"}</div>
         <div>
           <h3>{block.heading}</h3>
-          <p>{block.body}</p>
+          {block.body?.split(/\n\s*\n/).map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
       </section>
     );
