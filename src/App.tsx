@@ -178,39 +178,54 @@ function WeekMenu({
         </div>
         <div className="week-list">
           {chapters.map((week) => (
-            <a
-              key={week.slug}
-              href={
-                week.status === "published"
-                  ? `/weeks/${week.slug}`
-                  : "#coming-soon"
-              }
-              onClick={(e) => {
-                if (week.status !== "published") e.preventDefault();
-                onClose?.();
-              }}
-              aria-disabled={week.status !== "published"}
-              aria-label={
-                week.status === "published"
-                  ? `Entry ${week.number}: ${week.title}`
-                  : `Entry ${week.number}: ${week.title} (draft)`
-              }
-              title={week.status !== "published" ? "This entry is still a draft" : undefined}
-              className={
-                active === week.slug
-                  ? "active-week"
-                  : week.status !== "published"
-                    ? "unavailable"
-                    : ""
-              }
-            >
-              <span className="week-number">
-                {String(week.number).padStart(2, "0")}
-              </span>
-              <span>{week.title}</span>
-              {week.status !== "published" && <Icon name="lock" size={14} />}
-              {active === week.slug && <span className="current-dot" />}
-            </a>
+            (() => {
+              const readingStatus = week.blocks.find(
+                (block) => block.type === "status",
+              )?.status;
+              const className = [
+                active === week.slug ? "active-week" : "",
+                week.status !== "published" ? "unavailable" : "",
+                readingStatus ? `reading-${readingStatus}` : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
+              const statusLabel = readingStatus
+                ? ` — reading status: ${readingStatus}`
+                : "";
+
+              return (
+                <a
+                  key={week.slug}
+                  href={
+                    week.status === "published"
+                      ? `/weeks/${week.slug}`
+                      : "#coming-soon"
+                  }
+                  onClick={(e) => {
+                    if (week.status !== "published") e.preventDefault();
+                    onClose?.();
+                  }}
+                  aria-disabled={week.status !== "published"}
+                  aria-label={
+                    week.status === "published"
+                      ? `Entry ${week.number}: ${week.title}${statusLabel}`
+                      : `Entry ${week.number}: ${week.title} (draft)`
+                  }
+                  title={week.status !== "published" ? "This entry is still a draft" : undefined}
+                  className={className}
+                >
+                  <span className="week-number">
+                    {String(week.number).padStart(2, "0")}
+                  </span>
+                  <span className="week-title">
+                    {readingStatus && <i className="reading-dot" aria-hidden="true" />}
+                    {week.title}
+                  </span>
+                  {week.status !== "published" && <Icon name="lock" size={14} />}
+                  {active === week.slug && <span className="current-dot" />}
+                </a>
+              );
+            })()
           ))}
         </div>
       </nav>

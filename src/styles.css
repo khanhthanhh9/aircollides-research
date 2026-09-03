@@ -2246,6 +2246,31 @@ body {
     color: #fff;
     text-decoration: underline;
   }
+  .week-list a .week-title {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+  }
+  .week-list a .reading-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 999px;
+    margin-top: 0.45em;
+    background: currentColor;
+  }
+  .week-list a.reading-red .week-title,
+  .week-list a.reading-red .week-number { color: #ff7777; }
+  .week-list a.reading-green .week-title,
+  .week-list a.reading-green .week-number { color: #7fd7b5; }
+  .week-list a.reading-yellow .week-title,
+  .week-list a.reading-yellow .week-number { color: #f4c95d; }
+  .week-list a.reading-pink .week-title,
+  .week-list a.reading-pink .week-number { color: #ff91bc; }
+  .week-list a.active-week .week-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .week-number {
     display: inline;
     width: auto;
