@@ -60,3 +60,9 @@ Do not use a color as a quality judgment unless the user has assigned it. The se
 2. Add a published `Week` in `src/data.ts` with a unique number and slug, plus an `Open PDF` resource block and a status block.
 3. Add the overview, definitions, summary, evidence/metrics, limitations, and a notes-ready section. Use Mermaid only where it materially clarifies the paper.
 4. Verify the type check/build, deploy, commit, and push.
+
+## Shared workspace rules
+
+- Also read `/Users/macbook/work/all_in_one/AGENTS.md` and load project context with `python3 /Users/macbook/work/all_in_one/hub.py context research-website`.
+- For every slide or deck task, follow the complete multi-pass pipeline in `/Users/macbook/work/all_in_one/workflows/teaching.md`, including a rendered first pass, a dedicated unnecessary-text pruning pass, independent content checks, inspection of every final rendered slide and a clean final build.
+- Use browser saved login or Keychain first. If this project needs a local credential fallback, its central location is `/Users/macbook/work/all_in_one/secrets/.env`. Read only the required variable without printing it. Never source the whole file or copy secrets into source files, prompts, task notes, URLs, logs or shell arguments.
